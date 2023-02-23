@@ -87,7 +87,7 @@ class RenderQuizz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(children: [
+        child: Column(key: const ValueKey("question"), children: [
           Text(_quizz.question,
               style:
                   const TextStyle(fontWeight: FontWeight.bold, fontSize: 32)),
@@ -99,11 +99,13 @@ class RenderQuizz extends StatelessWidget {
                   Flexible(
                       child: Text(
                     _quizz.suggestions[0]!,
+                    key: const ValueKey("suggestion 1"),
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 20),
                   )),
                   Flexible(
                       child: Text(_quizz.suggestions[1]!,
+                          key: const ValueKey("suggestion 2"),
                           textAlign: TextAlign.center,
                           style: const TextStyle(fontSize: 20))),
                 ],
@@ -117,10 +119,12 @@ class RenderQuizz extends StatelessWidget {
               Flexible(
                   child: Text(_quizz.suggestions[2]!,
                       textAlign: TextAlign.center,
+                      key: const ValueKey("suggestion 3"),
                       style: const TextStyle(fontSize: 20))),
               Flexible(
                   child: Text(_quizz.suggestions[3]!,
                       textAlign: TextAlign.center,
+                      key: const ValueKey("suggestion 4"),
                       style: const TextStyle(fontSize: 20))),
             ],
           )

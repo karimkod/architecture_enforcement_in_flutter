@@ -47,7 +47,8 @@ abstract class _QuizRepository {
 
 class _FakeRepository extends _QuizRepository {
   @override
-  Future<Quizz> getRandomQuizz() {
+  Future<Quizz> getRandomQuizz() async {
+    await Future.delayed(const Duration(milliseconds: 100));
     return Future.value(Quizz(
         question: "Where is Algeria Situated?",
         suggestions: {
