@@ -1,17 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:package_by_layer/main.dart' as app;
-
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('test getting random question',
       (WidgetTester widgetTester) async {
-      app.main();
-      await widgetTester.pumpAndSettle();
+    app.main();
+    await widgetTester.pumpAndSettle();
 
     expect(find.text("Random Question Quizz"), findsOneWidget);
     expect(find.byType(FloatingActionButton), findsOneWidget);
